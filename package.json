@@ -5,8 +5,11 @@
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",
-    "start": "nuxt start",
+    "start": "node server",
     "generate": "nuxt generate"
+  },
+  "engines": {
+    "node": "12.x.x"
   },
   "dependencies": {
     "@hapi/joi": "^17.1.1",
