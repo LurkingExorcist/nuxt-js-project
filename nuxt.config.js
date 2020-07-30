@@ -32,6 +32,9 @@ export default {
       }
     }
   },
+  axios: {
+    baseURL: 'https://bird-storm-avocado.glitch.me'
+  },
   vuetify: {
     customVariables: ['~/assets/variables.scss'],
     theme: {
