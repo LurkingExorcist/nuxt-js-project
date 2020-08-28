@@ -12,6 +12,11 @@
       <v-card>
         <v-card-title class="headline">
           Студенты
+          <v-switch
+            class="backlogged"
+            v-model="backlogged"
+            label="Показать студентов с задолженностью"
+          ></v-switch>
           <v-spacer />
           <v-btn
             v-if="userRole === 'director'"
@@ -145,6 +150,12 @@
   </v-layout>
 </template>
 
+<style scoped>
+.backlogged {
+  margin-left: 16px;
+}
+</style>
+
 <script>
 import qs from 'qs';
 
@@ -199,6 +210,7 @@ export default {
           value: 'controls'
         }
       ],
+      backlogged: false,
       query: {
         role: 'student'
       },
@@ -210,6 +222,11 @@ export default {
       alertText: '',
       alertColor: ''
     };
+  },
+  watch: {
+    backlogged() {
+      this.fetch();
+    },
   },
   mounted() {
     this.fetch();
@@ -246,7 +263,15 @@ export default {
     },
     async fetch() {
       try {
-        const { data } = await this.$axios.get(`/api/${this.table}/list?${qs.stringify(this.query)}`);
+        const query = {...this.query};
+
+        if (this.backlogged) {
+          query.backlog = {
+            $gte: 0
+          };
+        }
+
+        const { data } = await this.$axios.get(`/api/${this.table}/list?${qs.stringify(query)}`);
         this.items = data;
 
         this.alert('success', 'Данные успешно загружены');
@@ -277,6 +302,9 @@ export default {
         if (this.edititingItem.password === '') {
           delete this.edititingItem.password;
         }
+
+        this.edititingItem.backlog = +this.edititingItem.backlog;
+        this.edititingItem.payment_amount = +this.edititingItem.payment_amount;
         
         if (this.isEdit) {
           await this.$axios.put(`/api/${this.table}/one/?${qs.stringify({
