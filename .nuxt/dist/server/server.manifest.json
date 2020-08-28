@@ -1,0 +1,19 @@
+{
+  "entry": "server.js",
+  "files": {
+    "pages/admins.js": "pages/admins.js",
+    "pages/index.js": "pages/index.js",
+    "pages/lk.js": "pages/lk.js",
+    "pages/login.js": "pages/login.js",
+    "pages/students.js": "pages/students.js",
+    "server.js": "server.js"
+  },
+  "maps": {
+    "pages/admins.js": "pages/admins.js.map",
+    "pages/index.js": "pages/index.js.map",
+    "pages/lk.js": "pages/lk.js.map",
+    "pages/login.js": "pages/login.js.map",
+    "pages/students.js": "pages/students.js.map",
+    "server.js": "server.js.map"
+  }
+}

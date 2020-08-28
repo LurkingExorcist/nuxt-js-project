@@ -1,0 +1,37 @@
+[
+  {
+    "name": "admins",
+    "path": "/admins",
+    "component": "/home/lurking-exorcist/student-lk/pages/admins.vue",
+    "chunkName": "pages/admins",
+    "_name": "_7b2ef892"
+  },
+  {
+    "name": "lk",
+    "path": "/lk",
+    "component": "/home/lurking-exorcist/student-lk/pages/lk.vue",
+    "chunkName": "pages/lk",
+    "_name": "_140e8b9c"
+  },
+  {
+    "name": "login",
+    "path": "/login",
+    "component": "/home/lurking-exorcist/student-lk/pages/login.vue",
+    "chunkName": "pages/login",
+    "_name": "_4bcaca06"
+  },
+  {
+    "name": "students",
+    "path": "/students",
+    "component": "/home/lurking-exorcist/student-lk/pages/students.vue",
+    "chunkName": "pages/students",
+    "_name": "_27d3dd8b"
+  },
+  {
+    "name": "index",
+    "path": "/",
+    "component": "/home/lurking-exorcist/student-lk/pages/index.vue",
+    "chunkName": "pages/index",
+    "_name": "_fbb9b222"
+  }
+]
